@@ -1,19 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "I am a Sahil khan"),
-    React.createElement("h2", {}, "I am a H2 Tag"),
-  ]),
-  React.createElement("div", { id: "child2" }, [
-    React.createElement("h1", {}, "I am a H1 Tag"),
-    React.createElement("h2", {}, "I am a H2 Tag"),
-  ]),
-]);
+//React Element
 
-console.log(parent);
+const Title = () => (
+  <>
+    <h1 className="title">Welcome to JSX</h1>
+  </>
+);
+
+const Footer = () => <p>Something should be here in the footer</p>;
+
+const HeaderComponent = () => (
+  <>
+    <Title />
+    <h1 className="head" tabIndex="5">
+      Heading should be in Bold
+    </h1>
+    <Footer />
+  </>
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(parent);
+root.render(<HeaderComponent />);
