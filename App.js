@@ -1,26 +1,1979 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+/*
+- Header
+  - Logo
+  - Nav Items
+- Body
+  - Search
+  - Restaurant container
+   - Restaurant Cards
+    - Img
+    - Name of Restaurant
+    - Rating
+    - Cuisine
+    - Delievery Time
+- Footer
+  - Copyright
+  - Links
+  - Address
+  - Contact Info
+*/
 //React Element
 
-const Title = () => (
-  <>
-    <h1 className="title">Welcome to JSX</h1>
-  </>
-);
+const resList = [
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "12394",
+      name: "Byg Brewski Brewing Company",
+      uuid: "4e4319a4-d11f-45a7-8bf0-9d5d91e709f2",
+      city: "1",
+      area: "Sarjapur Road",
+      totalRatingsString: "10000+ ratings",
+      cloudinaryImageId: "dc2886690c60a7f3935ee4f58059ab3f",
+      cuisines: [
+        "Pizzas",
+        "Burgers",
+        "Pan-Asian",
+        "North Indian",
+        "Pastas",
+        "Grill",
+        "Biryani",
+        "Mexican",
+      ],
+      tags: [],
+      costForTwo: 85000,
+      costForTwoString: "₹850 FOR TWO",
+      deliveryTime: 32,
+      minDeliveryTime: 32,
+      maxDeliveryTime: 32,
+      slaString: "32 MINS",
+      lastMileTravel: 1.399999976158142,
+      slugs: {
+        restaurant: "big-brewsky-bellandursarjapur",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "10 2A  Big Brewsky  Kaikondrahalli  Sarjapur road  Behind MK Retail  Bangalore  Karnataka 560035",
+      locality: "Hennur",
+      parentId: 7382,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "FLAT150 off",
+        shortDescriptionList: [
+          {
+            meta: "FLAT150 off | Use FLATDEAL",
+            discountType: "Flat",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "FLAT150 off | Use FLATDEAL",
+            discountType: "Flat",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "₹150 OFF",
+        shortDescriptionList: [
+          {
+            meta: "Use FLATDEAL",
+            discountType: "Flat",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "FLAT150 off | Use FLATDEAL",
+            discountType: "Flat",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      ribbon: [
+        {
+          type: "PROMOTED",
+        },
+      ],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 2800,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 2800,
+        message: "",
+        title: "Delivery Charge",
+        amount: "2800",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "cid=6353394~p=1~eid=00000187-46e2-e3db-006d-58d200800175",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "1.3 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "12394",
+        deliveryTime: 32,
+        minDeliveryTime: 32,
+        maxDeliveryTime: 32,
+        lastMileTravel: 1.399999976158142,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: true,
+      avgRating: "4.2",
+      totalRatings: 10000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "72821",
+      name: "Burger King",
+      uuid: "d9021b3a-1e7c-497a-b52b-2561ad674af6",
+      city: "1",
+      area: "Kaikondrahalli",
+      totalRatingsString: "10000+ ratings",
+      cloudinaryImageId: "maf1fgipihaidm3kertx",
+      cuisines: ["Burgers", "American"],
+      tags: [],
+      costForTwo: 35000,
+      costForTwoString: "₹350 FOR TWO",
+      deliveryTime: 28,
+      minDeliveryTime: 28,
+      maxDeliveryTime: 28,
+      slaString: "28 MINS",
+      lastMileTravel: 1,
+      slugs: {
+        restaurant: "burger-king-bellandur-bellandursarjapur",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "Burger King, Surjapur road, Dodda Kannali  Bengaluru South Karnataka--560035",
+      locality: "Dodda Kannali",
+      parentId: 166,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "Get every item under 129",
+        shortDescriptionList: [
+          {
+            meta: "Get every item under 129",
+            discountType: "FinalPrice",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "Get every item under 129",
+            discountType: "FinalPrice",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "",
+        shortDescriptionList: [
+          {
+            meta: "",
+            discountType: "FinalPrice",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "Get every item under 129",
+            discountType: "FinalPrice",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 2800,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 2800,
+        message: "",
+        title: "Delivery Charge",
+        amount: "2800",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "1 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "72821",
+        deliveryTime: 28,
+        minDeliveryTime: 28,
+        maxDeliveryTime: 28,
+        lastMileTravel: 1,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "4.2",
+      totalRatings: 10000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "59593",
+      name: "Al Daaz",
+      uuid: "c189b92c-d842-4595-9a1f-ff85bd67bc2a",
+      city: "1",
+      area: "Hsr Layout",
+      totalRatingsString: "10000+ ratings",
+      cloudinaryImageId: "rxsvhvcdip9dbfdijzk9",
+      cuisines: [
+        "American",
+        "Arabian",
+        "Chinese",
+        "Desserts",
+        "Mughlai",
+        "North Indian",
+      ],
+      tags: [],
+      costForTwo: 40000,
+      costForTwoString: "₹400 FOR TWO",
+      deliveryTime: 40,
+      minDeliveryTime: 40,
+      maxDeliveryTime: 40,
+      slaString: "40 MINS",
+      lastMileTravel: 4.900000095367432,
+      slugs: {
+        restaurant: "al-daaz-hsr-hsr",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address: "#64 & 65, 27th Main Rd, 1st Sector HSR Layout - 560102",
+      locality: "HSR",
+      parentId: 21640,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 4000,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 4000,
+        message: "",
+        title: "Delivery Charge",
+        amount: "4000",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "4.9 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "59593",
+        deliveryTime: 40,
+        minDeliveryTime: 40,
+        maxDeliveryTime: 40,
+        lastMileTravel: 4.900000095367432,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "4.4",
+      totalRatings: 10000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "406091",
+      name: "Third Wave Coffee",
+      uuid: "4988e3a5-f758-4889-987f-38ccb9f7d150",
+      city: "1",
+      area: "Sarjapur Road",
+      totalRatingsString: "1000+ ratings",
+      cloudinaryImageId: "0dca660dbdf2e04f9b861c4426ffd41e",
+      cuisines: ["Beverages", "Bakery", "Continental"],
+      tags: [],
+      costForTwo: 40000,
+      costForTwoString: "₹400 FOR TWO",
+      deliveryTime: 21,
+      minDeliveryTime: 21,
+      maxDeliveryTime: 21,
+      slaString: "21 MINS",
+      lastMileTravel: 0.699999988079071,
+      slugs: {
+        restaurant:
+          "third-wave-coffee-roasters-bellandur-sarjapur-bellandur-sarjapur-2",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "Thirdwave Coffee Roaster, Sy No.53/6, Sarjapur Road, Doddakanneli, Bangalore, Mahadevapura , B.B.M.P East, Karnataka-560035",
+      locality: "Daddakanahalli",
+      parentId: 274773,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "40% off",
+        shortDescriptionList: [
+          {
+            meta: "40% off | Use GUILTFREE",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "40% off up to ₹100 | Use code GUILTFREE",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "40% OFF",
+        shortDescriptionList: [
+          {
+            meta: "Use GUILTFREE",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "40% off up to ₹100 | Use code GUILTFREE",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      ribbon: [
+        {
+          type: "PROMOTED",
+        },
+      ],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 2800,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 2800,
+        message: "",
+        title: "Delivery Charge",
+        amount: "2800",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "cid=6362317~p=4~eid=00000187-46e2-e3db-006d-58d300800465",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "0.6 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "406091",
+        deliveryTime: 21,
+        minDeliveryTime: 21,
+        maxDeliveryTime: 21,
+        lastMileTravel: 0.699999988079071,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: true,
+      avgRating: "4.3",
+      totalRatings: 1000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "654809",
+      name: "Meghana Foods",
+      uuid: "714578ac-c1b9-46a2-82af-a0d10ad21ad4",
+      city: "1",
+      area: "Sarjapur Road",
+      totalRatingsString: "1000+ ratings",
+      cloudinaryImageId: "c627e55c996978a070c10079ae57f706",
+      cuisines: [
+        "Biryani",
+        "Andhra",
+        "South Indian",
+        "North Indian",
+        "Chinese",
+        "Seafood",
+      ],
+      tags: [],
+      costForTwo: 50000,
+      costForTwoString: "₹500 FOR TWO",
+      deliveryTime: 25,
+      minDeliveryTime: 25,
+      maxDeliveryTime: 25,
+      slaString: "25 MINS",
+      lastMileTravel: 2.9000000953674316,
+      slugs: {
+        restaurant: "meghana-foods-bellandur-sarjapur-bellandur-sarjapur",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "SY No.18/2A, 1ST FLOOR G R S TOWERS SARJAPURA ROAD,BELLANDUR BANGALORE ,Mahadevapura , B.B.M.P East,Karnataka, 560102",
+      locality: "G R S TOWERS",
+      parentId: 635,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 2800,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 2800,
+        message: "",
+        title: "Delivery Charge",
+        amount: "2800",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "2.9 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "654809",
+        deliveryTime: 25,
+        minDeliveryTime: 25,
+        maxDeliveryTime: 25,
+        lastMileTravel: 2.9000000953674316,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "4.4",
+      totalRatings: 1000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "8069",
+      name: "Theobroma",
+      uuid: "21ace90d-552c-4604-9cb5-6c5455ffd109",
+      city: "1",
+      area: "Sarjapur Road",
+      totalRatingsString: "1000+ ratings",
+      cloudinaryImageId: "eb6ea8ccb576c5e3feeff7d18d1f3229",
+      cuisines: ["Bakery"],
+      tags: [],
+      costForTwo: 60000,
+      costForTwoString: "₹600 FOR TWO",
+      deliveryTime: 20,
+      minDeliveryTime: 20,
+      maxDeliveryTime: 20,
+      slaString: "20 MINS",
+      lastMileTravel: 1,
+      slugs: {
+        restaurant: "theobroma-chowpatty-sea-face-chowpatty-fort",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "Survey no. 82/8, Gold Sand Building, Ground Floor, Doddakenalli, Sarjapura main road, Mahadevapura , B.B.M.P East, Karnataka-560035",
+      locality: "Daddakanahalli",
+      parentId: 1040,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      ribbon: [
+        {
+          type: "PROMOTED",
+        },
+      ],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 2800,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 2800,
+        message: "",
+        title: "Delivery Charge",
+        amount: "2800",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "cid=6387567~p=7~eid=00000187-46e2-e3db-006d-58d400800701",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "1 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "8069",
+        deliveryTime: 20,
+        minDeliveryTime: 20,
+        maxDeliveryTime: 20,
+        lastMileTravel: 1,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: true,
+      avgRating: "4.4",
+      totalRatings: 1000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "386368",
+      name: "KFC",
+      uuid: "9072bee1-c46e-419c-9be7-b6862e76807c",
+      city: "1",
+      area: "Bellandur",
+      totalRatingsString: "1000+ ratings",
+      cloudinaryImageId: "bdcd233971b7c81bf77e1fa4471280eb",
+      cuisines: ["Burgers", "Biryani", "American", "Snacks", "Fast Food"],
+      tags: [],
+      costForTwo: 40000,
+      costForTwoString: "₹400 FOR TWO",
+      deliveryTime: 29,
+      minDeliveryTime: 29,
+      maxDeliveryTime: 29,
+      slaString: "29 MINS",
+      lastMileTravel: 3,
+      slugs: {
+        restaurant: "kfc-amrutha-engineering-college-road-bellandur-sarjapur",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "K.F.C. at Ground Floor, GR Arcade, Amrutha Engineering College Road, Off Sarjapur Road, Kasavanhalli, Bangalore, Bangalore South, Bangalore Urban, Karnataka-560035",
+      locality: "Kasavanhalli",
+      parentId: 547,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "20% off",
+        shortDescriptionList: [
+          {
+            meta: "20% off | Use SWIGGYIT",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "20% off up to ₹50 on select items | Use code SWIGGYIT",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "20% OFF",
+        shortDescriptionList: [
+          {
+            meta: "Use SWIGGYIT",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "20% off up to ₹50 on select items | Use code SWIGGYIT",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 3400,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 3400,
+        message: "",
+        title: "Delivery Charge",
+        amount: "3400",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "3 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "386368",
+        deliveryTime: 29,
+        minDeliveryTime: 29,
+        maxDeliveryTime: 29,
+        lastMileTravel: 3,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "3.9",
+      totalRatings: 1000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "286575",
+      name: "Chai Point",
+      uuid: "167c0406-ff0c-4707-b163-3390b9aeb5e6",
+      city: "1",
+      area: "Sarjapur Road",
+      totalRatingsString: "5000+ ratings",
+      cloudinaryImageId: "hwz6bkjkrjthkygoudgq",
+      cuisines: [
+        "Bakery",
+        "Beverages",
+        "Maharashtrian",
+        "Snacks",
+        "Street Food",
+        "South Indian",
+        "Punjabi",
+      ],
+      tags: [],
+      costForTwo: 15000,
+      costForTwoString: "₹150 FOR TWO",
+      deliveryTime: 30,
+      minDeliveryTime: 30,
+      maxDeliveryTime: 30,
+      slaString: "30 MINS",
+      lastMileTravel: 0.800000011920929,
+      slugs: {
+        restaurant: "chai-point-doddakannelli-bellandur-sarjapur",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "53,Carmelaram Post,1,Sarjapur Main Rd,Countryside Layout,Rainbow Drive,Doddakannelli,Bengaluru,Karnataka-560035",
+      locality: "Doddakannelli",
+      parentId: 1607,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "50% off",
+        shortDescriptionList: [
+          {
+            meta: "50% off | Use GUILTFREE",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹120 | Use code GUILTFREE",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "50% OFF",
+        shortDescriptionList: [
+          {
+            meta: "Use GUILTFREE",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹120 | Use code GUILTFREE",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      ribbon: [
+        {
+          type: "PROMOTED",
+        },
+      ],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 2800,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 2800,
+        message: "",
+        title: "Delivery Charge",
+        amount: "2800",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "cid=6384953~p=10~eid=00000187-46e2-e3db-006d-58d500800a76",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "0.8 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "286575",
+        deliveryTime: 30,
+        minDeliveryTime: 30,
+        maxDeliveryTime: 30,
+        lastMileTravel: 0.800000011920929,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: true,
+      avgRating: "4.3",
+      totalRatings: 5000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "10893",
+      name: "Pizza Hut",
+      uuid: "53cfa5e5-1485-4e33-981a-3c5f80a45ca0",
+      city: "1",
+      area: "Sarjapur Road",
+      totalRatingsString: "10000+ ratings",
+      cloudinaryImageId: "luoxp8cwf86gdlfyorzk",
+      cuisines: ["Pizzas"],
+      tags: [],
+      costForTwo: 35000,
+      costForTwoString: "₹350 FOR TWO",
+      deliveryTime: 34,
+      minDeliveryTime: 34,
+      maxDeliveryTime: 34,
+      slaString: "34 MINS",
+      lastMileTravel: 1.7999999523162842,
+      slugs: {
+        restaurant: "pizza-hut-sarjapur-220-bellandursarjapur",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "PHD , Shop No 5, MGR Complex, Near BATA Show Room,Sarjapur Road Bangalore 560035",
+      locality: "Kaikondrahalli",
+      parentId: 721,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 2800,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 2800,
+        message: "",
+        title: "Delivery Charge",
+        amount: "2800",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "1.7 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "10893",
+        deliveryTime: 34,
+        minDeliveryTime: 34,
+        maxDeliveryTime: 34,
+        lastMileTravel: 1.7999999523162842,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "3.7",
+      totalRatings: 10000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "487083",
+      name: "A2B - Adyar Ananda Bhavan",
+      uuid: "59134b3a-8c37-4330-acfe-06958e2887d1",
+      city: "1",
+      area: "Sarjapur Road",
+      totalRatingsString: "1000+ ratings",
+      cloudinaryImageId: "nmhb73zqlgvf3spussds",
+      cuisines: ["South Indian", "North Indian", "Sweets", "Chinese"],
+      tags: [],
+      costForTwo: 25000,
+      costForTwoString: "₹250 FOR TWO",
+      deliveryTime: 25,
+      minDeliveryTime: 25,
+      maxDeliveryTime: 25,
+      slaString: "25 MINS",
+      lastMileTravel: 2.9000000953674316,
+      slugs: {
+        restaurant: "a2b-veg-bellandur-sarjapur-bellandur-sarjapur-2",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "No 28/29, RR Mansion Ground Floor, Sarjapur Main Road, Bangalore- 562125",
+      locality: "RR MANSION",
+      parentId: 22,
+      unserviceable: false,
+      veg: true,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "20% off",
+        shortDescriptionList: [
+          {
+            meta: "20% off | Use TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "20% off up to ₹50 | Use code TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "20% OFF",
+        shortDescriptionList: [
+          {
+            meta: "Use TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "20% off up to ₹50 | Use code TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      ribbon: [
+        {
+          type: "PROMOTED",
+        },
+      ],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 2800,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 2800,
+        message: "",
+        title: "Delivery Charge",
+        amount: "2800",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "cid=6407869~p=16~eid=00000187-46e2-e3db-006d-58d700801001",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "2.9 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "487083",
+        deliveryTime: 25,
+        minDeliveryTime: 25,
+        maxDeliveryTime: 25,
+        lastMileTravel: 2.9000000953674316,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: true,
+      avgRating: "4.3",
+      totalRatings: 1000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "233815",
+      name: "Paradise Biryani",
+      uuid: "e0744679-7379-4b4e-98fc-a4372962aa57",
+      city: "1",
+      area: "HSR Layout",
+      totalRatingsString: "10000+ ratings",
+      cloudinaryImageId: "umocqqvl4q3jxchqalfz",
+      cuisines: ["Biryani", "Kebabs", "North Indian", "Hyderabadi"],
+      tags: [],
+      costForTwo: 40000,
+      costForTwoString: "₹400 FOR TWO",
+      deliveryTime: 41,
+      minDeliveryTime: 41,
+      maxDeliveryTime: 41,
+      slaString: "41 MINS",
+      lastMileTravel: 6.800000190734863,
+      slugs: {
+        restaurant: "paradise-biryani-sector-4-hsr",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address: "438, HSR Layout, Sector 4, Banaglore 560034",
+      locality: "4th Sector",
+      parentId: 700,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 5300,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 5300,
+        message: "",
+        title: "Delivery Charge",
+        amount: "5300",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "6.8 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "233815",
+        deliveryTime: 41,
+        minDeliveryTime: 41,
+        maxDeliveryTime: 41,
+        lastMileTravel: 6.800000190734863,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "3.8",
+      totalRatings: 10000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "649407",
+      name: "McDonald's",
+      uuid: "9df4ebab-877a-4c93-a789-115fbfc50ad4",
+      city: "1",
+      area: "Sarjapur Road",
+      totalRatingsString: "500+ ratings",
+      cloudinaryImageId: "0e8f93a56b93e43d7627c2c21bc1106c",
+      cuisines: ["Burgers", "Beverages", "Cafe", "Desserts"],
+      tags: [],
+      costForTwo: 40000,
+      costForTwoString: "₹400 FOR TWO",
+      deliveryTime: 28,
+      minDeliveryTime: 28,
+      maxDeliveryTime: 28,
+      slaString: "28 MINS",
+      lastMileTravel: 1.7000000476837158,
+      slugs: {
+        restaurant: "mcdonalds-near-wipro-gate-bellandur-sarjapur",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "McDonalds Family Restaurants,Survey No:65/1A, Beside SOUTH IN HOTEL, Near Wipro Gate, Kaikondrahalli, Sarjapur Road, Bangalore-560035",
+      locality: "Near Wipro Gate",
+      parentId: 630,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "20% off",
+        shortDescriptionList: [
+          {
+            meta: "20% off | Use TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "20% off up to ₹50 | Use code TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "20% OFF",
+        shortDescriptionList: [
+          {
+            meta: "Use TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "20% off up to ₹50 | Use code TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 2800,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 2800,
+        message: "",
+        title: "Delivery Charge",
+        amount: "2800",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "1.7 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "649407",
+        deliveryTime: 28,
+        minDeliveryTime: 28,
+        maxDeliveryTime: 28,
+        lastMileTravel: 1.7000000476837158,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "4.1",
+      totalRatings: 500,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "444074",
+      name: "Magnolia Bakery",
+      uuid: "8fe485d2-f63a-4443-ac78-3acd3a547078",
+      city: "1",
+      area: "Bellandur",
+      totalRatingsString: "1000+ ratings",
+      cloudinaryImageId: "6f0945b8b18d9f4241dd1cd9a70e23d7",
+      cuisines: ["Bakery", "Desserts", "Ice Cream"],
+      tags: [],
+      costForTwo: 50000,
+      costForTwoString: "₹500 FOR TWO",
+      deliveryTime: 32,
+      minDeliveryTime: 32,
+      maxDeliveryTime: 32,
+      slaString: "32 MINS",
+      lastMileTravel: 5,
+      slugs: {
+        restaurant: "magnolia-bakery-bellandur-sarjapur-bellandur-sarjapur",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "Unit 26A - 1, The Bay, RMZ Ecoworld, Marathahalli - Sarjapur Outer Ring Rd, Bengaluru, Karnataka 560103",
+      locality: "RMZ Ecoworld",
+      parentId: 267303,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      ribbon: [
+        {
+          type: "PROMOTED",
+        },
+      ],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 4700,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 4700,
+        message: "",
+        title: "Delivery Charge",
+        amount: "4700",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "cid=6292824~p=19~eid=00000187-46e2-e3db-006d-58d80080134c",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "5 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "444074",
+        deliveryTime: 32,
+        minDeliveryTime: 32,
+        maxDeliveryTime: 32,
+        lastMileTravel: 5,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: true,
+      avgRating: "4.5",
+      totalRatings: 1000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "600507",
+      name: "Aubree",
+      uuid: "dd1e8c5b-3e88-4e97-b024-dcdc33a540b5",
+      city: "1",
+      area: "Varthur Hobli",
+      totalRatingsString: "500+ ratings",
+      cloudinaryImageId: "cjb2flz2zalnqqy5u2jp",
+      cuisines: ["Desserts", "Bakery"],
+      tags: [],
+      costForTwo: 80000,
+      costForTwoString: "₹800 FOR TWO",
+      deliveryTime: 23,
+      minDeliveryTime: 23,
+      maxDeliveryTime: 23,
+      slaString: "23 MINS",
+      lastMileTravel: 2.4000000953674316,
+      slugs: {
+        restaurant: "aubree-bellandur-sarjapur-bellandur-sarjapur",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "NO.12, YELLAMMA DEVI ARCADE, SITE NO.12, GROUND FLOOR, AMBALIPURA VILLAGE, VARTHUR HOBLI - BENGALURU, INDIA, Mahadevapura , B.B.M.P East, Karnataka-560103",
+      locality: "Ambalipura",
+      parentId: 3807,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "25% off",
+        shortDescriptionList: [
+          {
+            meta: "25% off | Use TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "25% off up to ₹65 | Use code TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "25% OFF",
+        shortDescriptionList: [
+          {
+            meta: "Use TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "25% off up to ₹65 | Use code TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      ribbon: [
+        {
+          type: "PROMOTED",
+        },
+      ],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 2800,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 2800,
+        message: "",
+        title: "Delivery Charge",
+        amount: "2800",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "cid=6330777~p=22~eid=00000187-46e2-e3db-006d-58d90080166e",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "2.4 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "600507",
+        deliveryTime: 23,
+        minDeliveryTime: 23,
+        maxDeliveryTime: 23,
+        lastMileTravel: 2.4000000953674316,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: true,
+      avgRating: "4.3",
+      totalRatings: 500,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "352937",
+      name: "Chicking",
+      uuid: "b90fdf19-fb42-40a4-a8bf-73dade3460a2",
+      city: "1",
+      area: "Sarjapur Road",
+      totalRatingsString: "1000+ ratings",
+      cloudinaryImageId: "umextdg03havswmniytn",
+      cuisines: [
+        "Fast Food",
+        "American",
+        "Snacks",
+        "Grill",
+        "Pizzas",
+        "Mexican",
+        "Beverages",
+      ],
+      tags: [],
+      costForTwo: 40000,
+      costForTwoString: "₹400 FOR TWO",
+      deliveryTime: 26,
+      minDeliveryTime: 26,
+      maxDeliveryTime: 26,
+      slaString: "26 MINS",
+      lastMileTravel: 0.800000011920929,
+      slugs: {
+        restaurant: "chicking-bellandur-sarjapur-bellandur-sarjapur",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "53/2, SL NO 319, DODDAKANNELLI VILLAGE, VARTHUR HOBLI, SARJAPUR ROAD, BANGALORE - 560035",
+      locality: "Daddakanahalli",
+      parentId: 251,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "30% off",
+        shortDescriptionList: [
+          {
+            meta: "30% off | Use SPECIALS",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "30% off up to ₹75 on select items | Use code SPECIALS",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "30% OFF",
+        shortDescriptionList: [
+          {
+            meta: "Use SPECIALS",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "30% off up to ₹75 on select items | Use code SPECIALS",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 2800,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 2800,
+        message: "",
+        title: "Delivery Charge",
+        amount: "2800",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "0.8 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "352937",
+        deliveryTime: 26,
+        minDeliveryTime: 26,
+        maxDeliveryTime: 26,
+        lastMileTravel: 0.800000011920929,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "3.9",
+      totalRatings: 1000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+];
 
-const Footer = () => <p>Something should be here in the footer</p>;
+const Header = () => {
+  return (
+    <div className="header">
+      <img
+        className="company-logo"
+        src="https://cdn.shopify.com/s/files/1/0411/2538/0259/files/logo_2_v12_1200x1200.png?v=1613552783"
+      ></img>
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
 
-const HeaderComponent = () => (
-  <>
-    <Title />
-    <h1 className="head" tabIndex="5">
-      Heading should be in Bold
-    </h1>
-    <Footer />
-  </>
-);
+const RestaurantCard = (props) => {
+  const { resData } = props;
+  const { name, cuisines, avgRating, deliveryTime, costForTwo } = resData.data;
+  return (
+    <div className="res-card">
+      <img
+        className="cuisine-img"
+        src={
+          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
+          resData.data.cloudinaryImageId
+        }
+      ></img>
+      <div className="res-details">
+        <div class="res-name">{name}</div>
+        <div className="cuisines-list">{cuisines.join(",")}</div>
+        <div className="res-cost">
+          <div className="rating-badge">{avgRating}</div>
+          <div>•</div>
+          <div>{deliveryTime} MIN</div>
+          <div>•</div>
+          <div>₹{costForTwo / 100} FOR TWO</div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Body = () => {
+  return (
+    <div className="body">
+      <div className="search-container">
+        <input
+          className="searchBox"
+          type="text"
+          placeholder="Search ..."
+        ></input>
+      </div>
+      <div className="res-container">
+        {resList.map((restaurant) => {
+          return (
+            <RestaurantCard key={restaurant.data.id} resData={restaurant} />
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+const AppLayout = () => {
+  return (
+    <div className="layout">
+      <Header />
+      <Body />
+    </div>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<HeaderComponent />);
+root.render(<AppLayout />);
