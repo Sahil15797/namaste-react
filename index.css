@@ -84,3 +84,12 @@ h5{
 .cuisines-list{
     color: #686b78;
 }
+
+.filter-container{
+    display: flex;
+}
+
+.filter-btn{
+    padding: 5px 10px;
+    cursor: pointer;
+}
